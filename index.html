@@ -7,10 +7,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.0.738710672337">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738886039307">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.0.0">
+    <meta name="generator" content="Retype 3.0.1">
 
     <!-- Primary Meta Tags -->
     <title>Welcome to Retype - Generate, publish, and share documentation</title>
@@ -36,11 +36,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.0.0.738710672337" rel="stylesheet" />
+    <link href="resources/css/retype.css?v=3.0.1.738886039307" rel="stylesheet" />
 
-    <script type="text/javascript" src="resources/js/config.js?v=3.0.0.738710672337" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="resources/js/retype.js?v=3.0.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=3.0.0.738710672337" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/config.js?v=3.0.1.738886039307" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/retype.js?v=3.0.1" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=3.0.1.738886039307" data-turbo-eval="false" defer></script>
 
     <!-- Add content to _includes/head.html to include here -->
 </head>
@@ -281,27 +281,27 @@
 </doc-anchor-target>
 <p>You can install Retype using <code v-pre>npm</code>, <code v-pre>yarn</code>, or the <code v-pre>dotnet</code> CLI.</p>
 <p>From your command line, navigate to a folder location where you have one or more Markdown <code v-pre>.md</code> files, such as a GitHub project.</p>
-<p>Next, choose one of the following tools to first install <code v-pre>retypeapp</code> and then start Retype by using the <code v-pre>retype watch</code> <a href="guides/cli/#retype-watch">command</a>:</p>
+<p>Next, choose one of the following tools to first install <code v-pre>retypeapp</code> and then start Retype by using the <code v-pre>retype start</code> <a href="guides/cli/#retype-start">command</a>:</p>
 <doc-tabs>
 <doc-tab id="npm">
 <template #title>NPM</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">npm install retypeapp --global
-retype watch</code></pre>
+retype start</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab id="yarn">
 <template #title>Yarn</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">yarn global add retypeapp
-retype watch</code></pre>
+retype start</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab id="dotnet">
 <template #title>dotnet</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">dotnet tool install retypeapp --global
-retype watch</code></pre>
+retype start</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
@@ -358,7 +358,7 @@ retype watch</code></pre>
         <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M7 11.5H2.938c-.794 0-1.438.644-1.438 1.437v8.313a.75.75 0 0 1-1.5 0v-8.312A2.939 2.939 0 0 1 2.937 10H7V6.151c0-.897.678-1.648 1.57-1.74l6.055-.626 1.006-1.174A1.752 1.752 0 0 1 16.96 2h1.29c.966 0 1.75.784 1.75 1.75V6h3.25a.75.75 0 0 1 0 1.5H20V14h3.25a.75.75 0 0 1 0 1.5H20v2.25a1.75 1.75 0 0 1-1.75 1.75h-1.29a1.75 1.75 0 0 1-1.329-.611l-1.006-1.174-6.055-.627A1.749 1.749 0 0 1 7 15.348Zm9.77-7.913v.001l-1.201 1.4a.75.75 0 0 1-.492.258l-6.353.657a.25.25 0 0 0-.224.249v9.196a.25.25 0 0 0 .224.249l6.353.657c.191.02.368.112.493.258l1.2 1.401a.252.252 0 0 0 .19.087h1.29a.25.25 0 0 0 .25-.25v-14a.25.25 0 0 0-.25-.25h-1.29a.252.252 0 0 0-.19.087Z"/></g></g></svg> Powerful</span>
     </h4>
 </doc-anchor-target>
-<p>Project level <a href="configuration/project/">configuration</a> using <code v-pre>retype.yml</code> unlocks many more Retype features and customization.</p>
+<p>Project level <a href="configuration/project/">configuration</a> using <code v-pre>retype.yml</code> unlocks many more features and customization.</p>
 <doc-anchor-target id="simple-formatting">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#simple-formatting">#</doc-anchor-trigger>
