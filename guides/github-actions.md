@@ -13,7 +13,7 @@ Currently, there are two Retype related GitHub Actions:
 
 The first, **Build Action** will automatically build your Retype powered website with each new change that is committed.
 
-The second, **GitHub Pages Action** will automatically publish your newly built website to a branch in Github so it is available to host from [GitHub Pages](https://pages.github.com/). By default, the `retype` branch is used, but of course that is also configurable, it can also be used to deploy to [Netlify](https://www.netlify.com/) and alot of other pages!
+The second, **GitHub Pages Action** will automatically publish your newly built website to a branch in Github so it is available to host from [GitHub Pages](https://pages.github.com/). By default, the `retype` branch is used, but of course that is also configurable, it can also be used to deploy to [Netlify](https://www.netlify.com/) and a lot of other pages!
 
 Automatically deploying to GitHub Pages requires a basic **retype-action.yml** configuration file to be added to your GitHub repo and some simple project configuration.
 
@@ -59,7 +59,11 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 7.0.x
 
       - uses: retypeapp/action-build@latest
 
@@ -114,7 +118,11 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 7.0.x
 
       - uses: retypeapp/action-build@latest
         with:
@@ -129,4 +137,4 @@ jobs:
 
 ## Step 2: Configure GitHub Pages
 
-Once [Step 1](#step-1-add-retype-actionyml-workflow) is complete, configure your [GitHub Pages](/hosting/github-pages.md#step-2-configure-github-pages) setup.
+Once [Step 1](#step-1-add-retype-actionyml-workflow) is complete, configure your [GitHub Pages](/hosting/github-pages.md) web site hosting.

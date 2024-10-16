@@ -51,7 +51,7 @@ Similar to [`/categories`](#categories), you can also add content to the `/tags`
 
 ### CNAME
 
-A **CNAME** file will be automatically created if the [`url`](/configuration/project.md#url) is configured with a domain or sub-domain.
+A **CNAME** file will be automatically created if the [`url`](/configuration/project.md#url) is configured with a domain name or subdomain.
 
 For instance, including `url: docs.example.com` within your **retype.yml** project config file also instructs Retype to create a **CNAME** file with the value `docs.example.com`. That **CNAME** file is used by [GitHub Pages](/guides/github-actions.md) and possibly other website hosting services as the way to configure custom domain name hosting.
 
@@ -59,16 +59,7 @@ If you manually create a **CNAME** file within the root of the [input](/configur
 
 ### Default pages
 
-Folder default pages are custom **.md** files that will be treated as the index page of the folder.
-
-Retype will search using the following case insensitive priority:
-
-1. `index.md`
-2. `readme.md`
-3. `default.md`
-4. `welcome.md` *only in the project root
-
-For instance, creating a the file **docs/index.md** will create a custom page accessible from the path `https://example.com/docs/`. The **index.md** page instructs Retype to create an **index.html** file within the **docs/** folder.
+{{ include "snippets/default-pages.md" }}
 
 ### Project config
 

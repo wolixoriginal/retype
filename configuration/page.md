@@ -19,6 +19,10 @@ order: 100
 This is a sample page demonstrating page metadata.
 ```
 
+## Default pages
+
+{{ include "snippets/default-pages.md" }}
+
 ## Separate .yml file
 
 If you would prefer to keep the page metadata separated and placed outside of the **.md** content page, the config can be moved into a paired **.yml** file.
@@ -42,7 +46,7 @@ order: 100
 ```
 
 !!!
-If you add configs to both locations, the page [metadata](/faq.md#what-is-page-metadata) take precedence, even if they are different configs.
+If you add configs to both locations, the page [metadata](/faq.md#what-is-page-metadata) takes precedence, even if they are different configs.
 
 If you add one or more configs to a **.md** page, Retype will not look for nor read the separate **.yml** file. Just use one or the other, but not both.
 !!!
@@ -159,6 +163,25 @@ author:
 ---
 ```
 
+===
+
+---
+
+## breadcrumb
+
+This config is Retype [!badge PRO](/pro/pro.md) only.
+
+=== [!badge PRO] breadcrumb : `boolean`
+
+The `breadcrumb` config controls whether to include the [breadcrumb](project.md#breadcrumb) navigation on this page. Default is `true`.
+
+Set to `false` to disable the breadcrumb navigation on this page.
+
+```yml
+breadcrumb: false
+```
+
+It is also possible to disable the breadcrumb navigation on all pages within a [folder](folder.md) by setting `breadcrumb: false` in the folderh`index.yml` configuration file or the folder default page, such as `default.md`, `readme.md`, or `index.md`.
 ===
 
 ---
@@ -412,10 +435,10 @@ Value type | Description
 --- | ---
 `number` (positive) | A larger positive number gets more _weight_ or _priority_ and is pushed higher in the navigation. Largest number at the top. Example: `order: 100` will be ordered above `order: 10`.
 `alpha` (high) | Setting `order` with an alpha-numeric value is possible and those pages will be ordered against the `label` value of all other pages that do not have an `order` configured.  Example: `order: alpha` will be ordered above `order: beta` or a page configured with `label: bravo`.
-no `order` set | If no `order` is configured, all pages will be ordered alphabetically based on its `label`, `title`, the first `h1` title, or the file name values. The `label` config has the highest priorty.
+no `order` set | If no `order` is configured, all pages will be ordered alphabetically based on its `label`, `title`, the first `h1` title, or the file name values. The `label` config has the highest priority.
 `alpha` (low) | Example: `order: zulu` will be ordered below `order: zebra` or a page configured with `label: yakee`.
 `vSemver` (newer) | Page `order` configured with a [semver](https://semver.org/) value are ordered with the newest version above an older version. These pages are also moved towards the bottom of the navigation. Example: `order: v1.1` will be ordered above `order: v1.0`.
-`number` (negative) | A negative number gets less _weight_ or _priority_ and is pushed to the bottom of the navigation. Setting the `order` with a negative number is a simple way to push a page to the bottom ofthe navigation. Example: `order: -100` will be ordered below `order: -10`.
+`number` (negative) | A negative number gets less _weight_ or _priority_ and is pushed to the bottom of the navigation. Setting the `order` with a negative number is a simple way to push a page to the bottom of the navigation. Example: `order: -100` will be ordered below `order: -10`.
 
 By default, the home page of the website has an order of `10000`. To add a page in the navigation just above the home page, set a value of `order: 10001` or greater. To add a page in the navigation just below the home page, set a value of `order: 9999` or lower. To move the home page to the bottom of the navigation, set a negative value, such as `order: -10000`.
 
@@ -499,7 +522,7 @@ redirect: getting-started.md
 # Setup
 ```
 
-Retype will automaticially handle any incoming **example.com/setup** requests and redirect to the new **example.com/getting-started** location.
+Retype will automatically handle any incoming **example.com/setup** requests and redirect to the new **example.com/getting-started** location.
 
 Retype is also smart enough to scan your project for any **setup.md** links and replace those with a link directly to **getting-started.md**.
 
@@ -712,7 +735,7 @@ visibility: protected
 ---
 # A protected page
 
-This page will be visibile in the main navigation, but will require a password to view the page.
+This page will be visible in the main navigation, but will require a password to view the page.
 ```
 
 Then call either of the following commands to set the password for the project:
@@ -724,6 +747,12 @@ retype build --password <your-password>
 
 The project password can also be set as an Environment variable by using [`RETYPE_PASSWORD`](../configuration/envvars.md/#retype_password).
 
+An entire folder can be set to `protected` by adding an `index.yml` file with the following configuration to the root of the folder. See the [folder](folder.md) docs for additional examples.
+
+```yml
+visibility: protected
+```
+
 ### private
 
 To create a private page, add `visibility: private` and then set the password for the project using the `--password` flag.
@@ -734,7 +763,7 @@ visibility: private
 ---
 # A private page
 
-This page will not be visibile in the main navigation and will require a password to view the page.
+This page will not be visible in the main navigation and will require a password to view the page.
 ```
 
 Then call either of the following commands to set the password for the project:
@@ -749,3 +778,9 @@ The project password can also be set as an Environment variable by using [`RETYP
 !!!
 For `hidden` and `private` pages, Retype does not give you a link to the page, but it still uses the same naming convention as all other pages. For instance, if your site is hosted at `https://example.com` and the page was called `my-hidden-page.md`, the URL would be `https://example.com/my-hidden-page/`.
 !!!
+
+An entire folder can be set to `private` by adding an `index.yml` file with the following configuration to the root of the folder. See the [folder](folder.md) docs for additional examples.
+
+```yml
+visibility: private
+```

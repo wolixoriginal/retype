@@ -3,7 +3,6 @@ icon: mark-github
 tags:
   - guide
   - hosting
-order: 100
 ---
 # GitHub Pages
 
@@ -67,9 +66,9 @@ url: companyx.github.io/docs/
 
 ### Custom domain
 
-Instead of using the `github.io` domain, it is possible to configure GitHub Pages to use a custom domain or subdomain name.
+Instead of using the `github.io` domain, it is possible to configure GitHub Pages to use a custom domain name or subdomain name.
 
-Just enter your domain or subdomain name in the **Custom domain** field and click **Save**.
+Just enter your domain name or subdomain name in the **Custom domain** field and click **Save**.
 
 ![](/static/github-actions-configure-custom-domain.png)
 
