@@ -1,4 +1,5 @@
 ---
+icon: file
 order: 1000
 ---
 # Basic project config
@@ -8,7 +9,7 @@ The following is a basic **retype.yml** [project configuration](/configuration/p
 ```yml retype.yml
 input: .
 output: .retype
-url: example.com # Add your website address here
+url: example.com # Add your website here
 branding:
   title: Project Name
   label: Docs
